@@ -1,66 +1,173 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+ Project Description
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project is a Local Rental Website developed as a Graduation Project using Laravel.
+The platform connects lenders and customers, providing a secure rental workflow with real-time availability management, online payments, and an admin dashboard.
 
-## About Laravel
+The system ensures that once an item is requested by a customer, it becomes unavailable to others until the booking is confirmed or expires.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+ Project Objectives
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Build a real-world rental platform
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Implement role-based authentication & authorization
 
-## Learning Laravel
+Design a secure rental workflow
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Integrate online payments using Stripe
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Apply background jobs for automated system tasks
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Deploy the system to a production environment
 
-## Laravel Sponsors
+ User Roles
+--> Admin
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Manage users (lenders & customers)
 
-### Premium Partners
+Manage items and categories
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Monitor rentals 
 
-## Contributing
+View system analytics
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+--> Lender
 
-## Code of Conduct
+Add and manage rental items
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Approve or reject rental requests
 
-## Security Vulnerabilities
+Track rental history
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+--> Customer
 
-## License
+Browse available items
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Request rentals
+
+Complete payments
+
+View current and previous rentals
+
+--> Authentication & Authorization
+
+Secure authentication system
+
+Role-based access control:
+
+Admin
+
+Lender
+
+Customer
+
+Each role has restricted access to specific features
+
+--> Rental Workflow
+
+Customer sends a rental request
+
+Item status changes to Locked (not available to other customers)
+
+Lender approves the request
+
+Customer completes payment via Stripe
+
+Item status becomes Rented
+
+After rental period ends:
+
+Background Job automatically changes status to Available
+
+--> Background Jobs & Scheduling
+
+Jobs handle:
+
+Rental expiration
+
+Automatic item availability reset
+
+Implemented using Laravel Queue & Scheduler
+
+--> REST API
+
+Fully implemented RESTful API
+
+Used for:
+
+Authentication
+
+Items & categories
+
+Rental requests
+
+Payments
+
+Ready for frontend or mobile applications
+
+--> Payment System
+
+Stripe payment gateway integration
+
+Secure checkout
+
+Payment confirmation and tracking
+
+--> Technologies Used
+
+Backend: Laravel 10
+
+Frontend: React 
+
+Authentication: Role-based Auth
+
+API: RESTful API
+
+Payments: Stripe
+
+Database: MySQL
+
+Jobs: Laravel Queue & Scheduler
+
+Hosting: Hostinger
+
+⚡ Installation & Setup
+git clone https://github.com/username/local_rental.git
+cd local_rental
+composer install
+npm install
+npm run dev
+
+Environment Configuration
+
+Create .env file
+
+Configure:
+
+Database credentials
+
+Stripe keys (STRIPE_KEY, STRIPE_SECRET)
+
+php artisan migrate --seed
+php artisan serve
+
+ Deployment
+
+Deployed on Hostinger
+
+Configured for production environment
+
+
+
+Academic Information
+
+Project Type: Graduation Project
+
+Field: Web Development
+
+Technology Stack: React & Laravel & REST API
+
+Purpose: Apply real-world backend concepts in a production-ready system
+
+📝 License
+
+This project is licensed under the MIT License.
