@@ -168,6 +168,6 @@ Technology Stack: React & Laravel & REST API
 
 Purpose: Apply real-world backend concepts in a production-ready system
 
-📝 License
+ License
 
 This project is licensed under the MIT License.
